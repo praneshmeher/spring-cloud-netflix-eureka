@@ -1,11 +1,9 @@
-spring:
-  application:
-    name: netflix-eureka
-  config:
-    import: "optional:configserver:http://localhost:8071/"
+server:
+  port: 8070
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+eureka:
+  client:
+    fetchRegistry: false
+    registerWithEureka: false
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
